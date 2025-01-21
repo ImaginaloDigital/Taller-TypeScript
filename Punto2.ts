@@ -80,7 +80,7 @@ function inicio(): void {
         console.log(`- ${producto}`);
     });
     rl.question("¿Desea buscar un producto o ver toda la información? (1)Buscar (2)Ver (3)Salir: ", (respuesta: string) => {
-        if (respuesta.toLowerCase() === '1') {
+        if (respuesta === '1') {
             rl.question("Ingrese el nombre del producto a buscar: ", (nombreProducto: string) => {
                 if (nombreProducto) {
                     buscarProducto(nombreProducto);
@@ -90,15 +90,15 @@ function inicio(): void {
                 //rl.close(); // Aquí cerramos la interfaz una vez que termina la búsqueda
                 inicio();
             });
-        } else if (respuesta.toLowerCase() === '2') {
+        } else if (respuesta === '2') {
             mostrarInformacion();
             //rl.close(); // Aquí cerramos la interfaz una vez que termina de mostrar la información
             inicio();
-        } else if (respuesta.toLowerCase() === '3') {
+        } else if (respuesta === '3') {
             console.log("¡Gracias por usar el sistema! Adiós.");
             rl.close(); // Cerramos la interfaz y salimos del programa
         }else {
-            console.log("Opción no válida. Por favor ingrese 'sí' o 'no'.");
+            console.log("Opción no válida. Por favor ingrese los números definidos (1)Buscar (2)Ver (3)Salir.");
             //rl.close(); // Cerramos la interfaz si la opción no es válida
             inicio();
         }
